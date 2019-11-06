@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% load static %}
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'css/grid.css' %}" rel="stylesheet">
+  {% block head %}
+  {% endblock %}
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="row">
+				<ul class="main-nav-1">
+                    <li><a href="#">PORTFOLIO</a></li>
+                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">ABOUT/CONTACT</a></li>
+                </ul>
+                {% for obj in logoList %}
+                <img src="{{ obj.image.url }}" alt="" class="logo">
+                {% endfor %}
+                <ul class="main-nav-2">
+                    <li><a href="#">RU</a></li>
+                    <li><a href="#">EN</a></li>
+                </ul>
+			</div>
+		</nav>
+	</header>
+	{% block body %}
+	{% endblock %}
+</body>
+</html>

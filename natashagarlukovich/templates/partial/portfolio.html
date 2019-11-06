@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>natashagarlukovich</title>
+<meta name="description" content="Portfolio"/>
+<meta name="keywords" content="Portfolio natashagarlukovich"/>
+{% endblock %}
+
+{% block body %}
+	<ul class="main-showcase">
+		{% for obj in imageList %}
+		<li>
+			<figure class="photo">
+				<img src="{{ obj.image.url }}" alt="">
+			</figure>
+		</li>
+		{% endfor %}
+	</ul>	
+{% endblock %}
