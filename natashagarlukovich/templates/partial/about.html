@@ -7,15 +7,22 @@
  
 {% block body %}
 	{% for obj in postList %}
-	    <img src="{{ obj.image.url }}" alt="">
-	    <h3>{{ obj.title }}</h3>
-	    <p>{{ obj.content }}</p>
+		<div class="about-image">
+	    	<img src="{{ obj.image.url }}" alt="" class="about-image-src">
+	    </div>
+	    <div class="about-titlecontent">
+		    <h3>{{ obj.title }}</h3>
+		    <p>{{ obj.content }}</p>
+	    </div>
 	{% endfor %}
-	<ion-icon name="logo-instagram"></ion-icon>
-	<ion-icon name="logo-facebook"></ion-icon>
-	<ion-icon name="logo-vk"></ion-icon>
-	<p>natashagarlukovich@gmail.com</p>
-
- 
+	<div class="about-links">
+		<div class="about-icons">
+			<a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+			<a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+			<a href="#"><ion-icon name="logo-vk"></ion-icon></a>
+		</div>
+		<p>natashagarlukovich@gmail.com</p>
+	</div>
+<
 <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 {% endblock %}

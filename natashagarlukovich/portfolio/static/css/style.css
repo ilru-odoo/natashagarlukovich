@@ -76,7 +76,7 @@ header a:active {
 }
 
 .my-gallery {
-  width: 100%;
+  width: 101%;
   float: left;
 }
 .my-gallery img {
@@ -244,4 +244,70 @@ h1 {
 .pswp__caption__center {
     color: #000; 
     font-size: 110%;
+}
+
+.about-image {
+    display: block;
+    width: 100%;
+
+}
+
+.about-image img {
+    width: 100%;
+    height: 35ch;
+    margin-top: -2%;
+}
+
+.about-titlecontent {
+    display: inline-block;
+    float: left;
+    width: 70%;
+}
+
+.about-links {
+    display: inline-block;
+    float: right;
+    width: 26%;
+    margin-top: 2%;
+}
+
+.about-image-src {
+    object-fit:cover;
+}
+
+.about-titlecontent h3 {
+    margin:4% 0 1% 2%;
+    font-size: 80%;
+}
+
+.about-titlecontent p {
+    margin-left: 2%;
+    font-size: 70%
+}
+
+ion-icon {
+  font-size: 45px;
+}
+
+.about-links p {
+    font-size: 50%;
+    color: #000;
+}
+
+.about-icons a{
+    color: #000;
+    text-decoration: none;
+}
+
+.about-icons a:hover ion-icon {
+    color: #fcaf12;
+}
+
+
+#about-img-figure {
+    width: 100%;
+}
+
+.pswp__button--close {
+    background-color: #000;
 }
