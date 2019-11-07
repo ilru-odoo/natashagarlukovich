@@ -4,13 +4,74 @@
 <meta name="description" content="{{ post.description }}"/>
 <meta name="keywords" content="{{ post.keywords }}"/>
 {% endblock %}
- 
 {% block body %}
   {% if postList.visible %}
-    <h1>{{ postList.title }}</h1>
-    <img src="{{ postList.image.url }}" alt="">
-    <p>{{ postList.content }}</p>
+  	<div class="post-single">
+	  	<div class="single-date">{{ postList.timestamp }}</div>
+	    <h1>{{ postList.title }}</h1>
+	    <div class="post-img my-gallery">
+	    	<figure id="post-img-figure">	
+	    		<a href="{{ postList.image.url }}" data-size="1366x768">
+	    			<img src="{{ postList.image.url }}"  alt="" class="post-img-src">	
+				</a>
+			</figure>
+	    </div>
+	    <p>{{ postList.content }}</p>
+    </div>
   {% else %}
     <p>Страница не найдена</p>
   {% endif %}
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+
+    <div class="pswp__scroll-wrap">
+
+
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+
+                <div class="pswp__counter"></div>
+
+
+
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+</div>
 {% endblock %}

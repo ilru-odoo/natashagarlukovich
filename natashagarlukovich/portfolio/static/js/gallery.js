@@ -138,7 +138,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
         // define options (if needed)
         options = {
-
+            
             // define gallery index (for URL)
             galleryUID: galleryElement.getAttribute('data-pswp-uid'),
 
@@ -149,8 +149,11 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                     rect = thumbnail.getBoundingClientRect(); 
 
                 return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-            }
+            },
 
+            loop: 'true',
+            showHideOpacity: 'true',
+            bgOpacity: '0.7',
         };
 
         // PhotoSwipe opened from URL

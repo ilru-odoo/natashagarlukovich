@@ -6,16 +6,22 @@
 {% endblock %}
  
 {% block body %}
-  <h1>Главная</h1>
   {% if not postList %}
   <b>Статьи не найдены</b>
   {% else %}
     {% for obj in postList %}
-    <a href=" {{ obj.id }}"><b>{{ obj.title }}</b></a>
-    <img src="{{ obj.image.url }}" alt="">
-    <p>{{ obj.content|truncatechars:70 }}</p>
-    <span>{{ obj.timestamp }}</span>
-    <br><br><br>
+    <a href="{{ obj.id }}" class="post-link">
+    	<div class="blog-post">
+    		<div class="blog-post-image">
+		    	<img src="{{ obj.image.url }}" alt="">
+		    </div>
+		    <div class="blog-post-content">
+			    <div class="sp">{{ obj.timestamp }}</div>
+			    <h3>{{ obj.title }}</h3>
+			    <p>{{ obj.content|truncatechars:200 }}</p>
+			</div>
+		</div>	
+	</a>
     {% endfor %}
   {% endif %}
 

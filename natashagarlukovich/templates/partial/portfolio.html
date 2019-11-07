@@ -3,18 +3,16 @@
 <title>natashagarlukovich</title>
 <meta name="description" content="Portfolio"/>
 <meta name="keywords" content="Portfolio natashagarlukovich"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.css">
 {% endblock %}
 
 {% block body %}
 		<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
 		{% for obj in imageList %}
-					<figure class="photo" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-						<a href="{{ obj.image.url }}" itemprop="contentUrl" data-size="1024x1024">
+					<figure class="photo">
+						<a href="{{ obj.image.url }}" data-size="1024x1024">
 							<img src="{{ obj.image.url }}" alt="">	
 						</a>
-						<figcaption itemprop="caption description">{{ obj.title }}</figcaption>
+						<figcaption>{{ obj.title }}</figcaption>
 						<div class="titles-photo">{{ obj.title }}</div>
 					</figure>
 		{% endfor %}
@@ -43,13 +41,7 @@
 
                 <div class="pswp__counter"></div>
 
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
                 <div class="pswp__preloader">
                     <div class="pswp__preloader__icn">
@@ -80,6 +72,5 @@
 
 </div>
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js'></script>
+
 {% endblock %}
