@@ -92,6 +92,10 @@ a:active {
   display: none;
 }
 
+.pswp__bg {
+    opacity: 0.7;
+}
+
 .photo {
     position: relative;
 	width: 100%;
