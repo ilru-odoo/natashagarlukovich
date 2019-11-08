@@ -6,18 +6,18 @@
 {% endblock %}
 
 {% block body %}
-		<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-		{% for obj in imageList %}
-					<figure class="photo">
-						<a href="{{ obj.image.url }}" data-size="1024x1024">
-							<img src="{{ obj.image.url }}" alt="">	
-						</a>
-						<figcaption>{{ obj.title }}</figcaption>
-						<div class="titles-photo">{{ obj.title }}</div>
-					</figure>
-		{% endfor %}
+		<div class="my-gallery">
+    		{% for obj in imageList %}
+    					<figure class="photo">
+    						<a href="{{ obj.image.url }}" data-size="1024x1024">
+    							<img src="{{ obj.image.url }}" alt="">	
+    						</a>
+    						<figcaption>{{ obj.title }}</figcaption>
+    						<div class="titles-photo">{{ obj.title }}</div>
+    					</figure>
+    		{% endfor %}
 		</div>
-
+        <div class="clearfix"></div>
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     <!-- Background of PhotoSwipe. 

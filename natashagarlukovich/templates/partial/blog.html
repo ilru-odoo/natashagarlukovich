@@ -4,7 +4,7 @@
 <meta name="description" content="{{ desc }}"/>
 <meta name="keywords" content="{{ key }}"/>
 {% endblock %}
- 
+	
 {% block body %}
   {% if not postList %}
   <b>Статьи не найдены</b>
@@ -16,13 +16,14 @@
 		    	<img src="{{ obj.image.url }}" alt="">
 		    </div>
 		    <div class="blog-post-content">
-			    <div class="sp">{{ obj.timestamp }}</div>
+			    <div class="sp">{{ obj.datestamp }}</div>
 			    <h3>{{ obj.title }}</h3>
 			    <p>{{ obj.content|truncatechars:200 }}</p>
 			</div>
 		</div>	
 	</a>
     {% endfor %}
+   <div class="blog-margin"></div>
   {% endif %}
 
 {% endblock %}

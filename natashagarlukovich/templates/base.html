@@ -18,25 +18,58 @@
 </head>
 <body>
 	<header>
+    
 		<nav>
 			<div class="row">
 				<ul class="main-nav-1">
-                    <li><a href="#">PORTFOLIO</a></li>
-                    <li><a href="#">BLOG</a></li>
-                    <li><a href="#">ABOUT/CONTACT</a></li>
+                    <li>
+                      {% if request.path == "/" %}
+                      <a href="/" style="color: #fcaf11;">PORTFOLIO</a>
+                      {% else %}
+                      <a href="/">PORTFOLIO</a>
+                      {% endif %}
+                    </li>
+                    <li>
+                      {% if request.path == "/blog/" %}
+                      <a href="/blog" style="color: #fcaf11;">BLOG</a>
+                      {% else %}
+                      <a href="/blog">BLOG</a>
+                      {% endif %}
+                    </li>
+                    <li>
+                      {% if request.path == "/about/" %}
+                      <a href="/about" style="color: #fcaf11;">ABOUT/CONTACT</a>
+                      {% else %}
+                      <a href="/about">ABOUT/CONTACT</a>
+                      {% endif %}
+                    </li>
+
                 </ul>
                 {% for obj in logoList %}
                 <img src="{{ obj.image.url }}" alt="" class="logo">
                 {% endfor %}
                 <ul class="main-nav-2">
-                    <li><a href="#">RU</a></li>
-                    <li><a href="#">EN</a></li>
+                    <li>
+                      {% if request.path %}
+                      <a href="#" style="color: #fcaf11;">RU</a>
+                      {% else %}
+                      <a href="#">RU</a>
+                      {% endif %}
+                    </li>
+                    <li>
+                      {% if request.path %}
+                      <a href="#" style="color: #fcaf11;">EN</a>
+                      {% else %}
+                      <a href="#">EN</a>
+                      {% endif %}
+                    </li>
                 </ul>
 			</div>
 		</nav>
 	</header>
 	{% block body %}
 	{% endblock %}
+<footer><p class="foot-p"> &copy; 2019 NATASHA GARLUKOVICH</p></footer>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js'></script>
 <script src="{% static 'js/gallery.js' %}"></script>

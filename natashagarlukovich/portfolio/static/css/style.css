@@ -19,8 +19,19 @@ body {
 
 /* REUSABLE COMPONENTS */
 
+.clearfix {zoom: 1}
+
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
 .row {
     margin: 0 auto;
+
 }
 
 .box {
@@ -78,6 +89,7 @@ header a:active {
 .my-gallery {
   width: 101%;
   float: left;
+  margin-bottom:1%;
 }
 .my-gallery img {
   width: 100%;
@@ -117,11 +129,15 @@ header a:active {
     text-align: center;
 }
 
-.photo:hover img {
+
+
+.photo:hover img  {
     opacity: 0.3;
     transition: opacity .6s;
 }
-.photo:hover .titles-photo {
+
+.photo:hover .titles-photo,
+.photo:active .titles-photo {
     transition: opacity .4s;
     opacity:1;
     transform: translate(-50%, -50%);
@@ -137,6 +153,8 @@ header a:active {
     margin: -1% 15% 4% 15%;
     overflow: hidden;
 }
+
+
 
 .blog-post-image {
     width: 50%;
@@ -164,9 +182,9 @@ header a:active {
     line-height: 210%;
 }
 
-h3 {
+.blog-post-content h3 {
     color: #000000;
-    font-size: 150%;
+    font-size: 180%;
 
 }
 
@@ -174,18 +192,26 @@ h3 {
     color: #717171;
 }
 
-.blog-post:hover {
+.blog-post:hover,
+.blog-post:active {
     background-color: #fcaf12;
+
 }
 
-.blog-post:hover h3 {
+.blog-post:hover h3,
+.blog-post:active h3 {
     color: #fafafa;
+    transition: color .5s;
 }
-.blog-post:hover p {
+.blog-post:hover,
+.blog-post:active p {
     color: #fafafa;
+    transition: color .5s;
 }
-.blog-post:hover .sp {
+.blog-post:hover,
+.blog-post:active .sp {
     color: #fafafa;
+    transition: color .5s;
 }
 
 .post-single {
@@ -210,7 +236,7 @@ h3 {
 
 .post-single img {  
     width: 100%;
-    height: 25ch;
+    height: 35ch;
 }
 
 .single-date {
@@ -282,7 +308,8 @@ h1 {
 
 .about-titlecontent p {
     margin-left: 2%;
-    font-size: 70%
+    font-size: 70%; 
+    line-height: 210%;
 }
 
 ion-icon {
@@ -294,12 +321,13 @@ ion-icon {
     color: #000;
 }
 
-.about-icons a{
+.about-icons a {
     color: #000;
     text-decoration: none;
 }
 
-.about-icons a:hover ion-icon {
+.about-icons a:hover ion-icon,
+.about-icons a:active ion-icon {
     color: #fcaf12;
 }
 
@@ -310,4 +338,19 @@ ion-icon {
 
 .pswp__button--close {
     background-color: #000;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+
+}
+.foot-p {
+    text-align: center;
+    font-size: 70%;   
+}
+
+
+.blog-margin {
+    margin-bottom: -3%;
 }
