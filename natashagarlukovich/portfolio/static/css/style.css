@@ -17,6 +17,7 @@ body {
     scroll-behavior: smooth;
 }
 
+.upper { text-transform: uppercase; }
 /* REUSABLE COMPONENTS */
 
 .clearfix {zoom: 1}

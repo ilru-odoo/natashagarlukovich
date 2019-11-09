@@ -4,11 +4,13 @@
 <meta name="description" content="{{ desc }}"/>
 <meta name="keywords" content="{{ key }}"/>
 {% endblock %}
-	
+{% load i18n %}	
 {% block body %}
   {% if not postList %}
   <b>Статьи не найдены</b>
   {% else %}
+	{% load i18n %}
+
     {% for obj in postList %}
     <a href="{{ obj.id }}" class="post-link">
     	<div class="blog-post">
