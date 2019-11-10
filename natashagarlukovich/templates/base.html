@@ -10,6 +10,7 @@
   {% load static i18n %}
   <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'css/grid.css' %}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/queries.css' %}">
   <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
   <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
@@ -35,7 +36,7 @@
     
 		<nav>
 			<div class="row">
-				<ul class="main-nav-1">
+				<ul class="main-nav-1 col span-1-of-3">
                     <li>
                       {% if request.path == "/ru/" or request.path == "/en/" %}
                       <a href="/{{ LANGUAGE_CODE }}/" style="color: #fcaf11;">
@@ -96,9 +97,11 @@
 
                 </ul>
                 {% for obj in logoList %}
-                <img src="{{ obj.image.url }}" alt="" class="logo">
+                <div class="main-nav-logo col span-1-of-3">
+                  <img src="{{ obj.image.url }}" alt="" class="logo">
+                </div>
                 {% endfor %}
-                <ul class="main-nav-2">
+                <ul class="main-nav-2 col span-1-of-3">
                       {% for language in languages %}
                           <li>
                               <a href="/{{ language.code }}{{ request.get_full_path|slice:'3:' }}" class="{% if language.code == LANGUAGE_CODE %}selected{% endif %}">

@@ -35,6 +35,8 @@ body {
 
 }
 
+
+
 .box {
     padding: 1%;
 }
@@ -58,33 +60,40 @@ header a:active {
 
 .main-nav-1 {
 	list-style: none;
-	float: left;
-	margin: 5% 0; 
+    text-align: left;
+    padding-top: 20px;
+
 }
 .main-nav-2 {
 	list-style: none;
-	float: right;
-	margin: 5% 0; 
+    text-align: right;
+    padding-top: 20px;
 }
 
 .main-nav-1 li {
 	display: inline-block;
 	margin:0 0 0 25px;
-	font-size: 65%
+	font-size: 65%;
 }
 
 
 .main-nav-2  li {
 	display: inline-block;
 	font-size: 65%;
-	margin: 0 25px 0 0;
+    margin:0 25px 0 0;
 	}
+
+
+.main-nav-logo {
+    text-align: center;
+
+}
 
 .logo {
 	height: 80px;
 	width: auto;
-	margin: 3% 25%;
 	border-radius: 50%;
+    vertical-align: middle;
 }
 
 .my-gallery {
@@ -151,7 +160,7 @@ header a:active {
 .blog-post {
     display: inline-block;
     width: 70%;
-    margin: -1% 15% 4% 15%;
+    margin: 0 15% 4% 15%;
     overflow: hidden;
 }
 
@@ -217,7 +226,7 @@ header a:active {
 
 .post-single {
     display: inline-block;
-    margin: -2% 15% 0 15%;
+    margin: 0 15% 0 15%;
     width: 70%;
     overflow: hidden;
 
@@ -282,7 +291,6 @@ h1 {
 .about-image img {
     width: 100%;
     height: 35ch;
-    margin-top: -2%;
 }
 
 .about-titlecontent {

@@ -1,0 +1,58 @@
+
+/* Big tablet to 1200px (width smaller that the 1140px row) */
+@media only screen and (max-width: 1200px) {
+	
+}
+
+
+
+/* Small tablet to big tablet: 768 to 1023 px */
+@media only screen and (max-width: 1023px) {
+	.main-nav-1 li {
+			margin:0 0 0 10px;
+		font-size: 55%;
+	}
+
+
+	.main-nav-2  li {
+		font-size: 55%;
+	    margin:0 10px 0 0;
+		}
+	.blog-post {
+	    width: 86%;
+	    margin: 0 7% 4% 7%;
+	}
+	.blog-post-content h3 {
+	    font-size: 150%;
+	}
+	.sp,
+	.blog-post-content p,
+	.single-date {
+	    font-size: 55%;
+	}
+	.post-single {
+	    margin: 0 7% 0 7%;
+	    width: 86%;
+	}
+	.post-single p {
+	    font-size: 55%;
+	}
+	.my-gallery figure {
+	  display: block;
+	  float: left;
+	  width: 50%;
+	}
+
+
+}
+
+/* Small phones to small tablet: 481 to 767 px */
+@media only screen and (max-width: 767px) {
+	
+}
+
+/* Small phones from: 0 to 480px */
+@media only screen and (max-width: 480px) {
+
+    
+}
