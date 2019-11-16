@@ -8,14 +8,7 @@
   {% if postList.visible %}
   	<div class="post-single">
 	  	<div class="single-date">{{ postList.datestamp }}</div>
-	    <h1>{{ postList.title }}</h1>
-	    <div class="post-img my-gallery">
-	    	<figure id="post-img-figure">	
-	    		<a href="{{ postList.image.url }}" data-size="1366x768">
-	    			<img src="{{ postList.image.url }}"  alt="" class="post-img-src">	
-				  </a>
-			  </figure>
-	    </div>
+	    <h3>{{ postList.title }}</h3>
 	    <p>{{ postList.content | safe }}</p>
     </div>
   {% else %}

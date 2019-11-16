@@ -7,9 +7,11 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css">
+  <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
   {% load static i18n %}
   <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'css/grid.css' %}" rel="stylesheet" type="text/css">
+
   <link rel="stylesheet" type="text/css" href="{% static 'css/queries.css' %}">
   <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
   <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
@@ -33,13 +35,13 @@
 </head>
 <body>
 	<header>
-    
 		<nav>
 			<div class="row">
-				<ul class="main-nav-1 col span-1-of-3">
+        <div class="col span-1-of-3"><a class="mobile-nav-icon js--nav-icon"><i class="icon ion-md-menu"></i></a>
+				<ul class="main-nav-1 js--main-nav">
                     <li>
-                      {% if request.path == "/ru/" or request.path == "/en/" %}
-                      <a href="/{{ LANGUAGE_CODE }}/" style="color: #fcaf11;">
+                      {% if request.path == "/" or request.path == "/en/" %}
+                      <a href="{% if 'ru' in LANGUAGE_CODE %}/{% else %}/{{ LANGUAGE_CODE }}/{% endif %}" style="color: #fcaf11;">
                         {% if 'ru' in LANGUAGE_CODE %}
                           ПОРТФОЛИО
                         {% else %}
@@ -47,7 +49,7 @@
                         {% endif %}
                       </a>
                       {% else %}
-                      <a href="/{{ LANGUAGE_CODE }}/">
+                      <a href="{% if 'ru' in LANGUAGE_CODE %}/{% else %}/{{ LANGUAGE_CODE }}/{% endif %}">
                       {% if 'ru' in LANGUAGE_CODE %}
                           ПОРТФОЛИО
                         {% else %}
@@ -58,7 +60,7 @@
                     </li>
                     <li>
                       {% if "/blog/" in request.path %}
-                      <a href="/{{ LANGUAGE_CODE }}/blog" style="color: #fcaf11;">
+                      <a href="{% if 'ru' in LANGUAGE_CODE %}/blog{% else %}/{{ LANGUAGE_CODE }}/blog{% endif %}" style="color: #fcaf11;">
                         {% if 'ru' in LANGUAGE_CODE %}
                           БЛОГ
                         {% else %}
@@ -66,7 +68,7 @@
                         {% endif %}
                       </a>
                       {% else %}
-                      <a href="/{{ LANGUAGE_CODE }}/blog">
+                      <a href="{% if 'ru' in LANGUAGE_CODE %}/blog{% else %}/{{ LANGUAGE_CODE }}/blog{% endif %}">
                       {% if 'ru' in LANGUAGE_CODE %}
                           БЛОГ
                         {% else %}
@@ -77,7 +79,7 @@
                     </li>
                     <li>
                       {% if "/about/" in request.path  %}
-                      <a href="/{{ LANGUAGE_CODE }}/about" style="color: #fcaf11;">
+                      <a href="{% if 'ru' in LANGUAGE_CODE %}/about{% else %}/{{ LANGUAGE_CODE }}/about{% endif %}" style="color: #fcaf11;">
                         {% if 'ru' in LANGUAGE_CODE %}
                         ИНФО/КОНТАКТЫ
                         {% else %}
@@ -85,7 +87,7 @@
                         {% endif %}
                       </a>
                       {% else %}
-                      <a href="/{{ LANGUAGE_CODE }}/about">
+                      <a href="{% if 'ru' in LANGUAGE_CODE %}/about{% else %}/{{ LANGUAGE_CODE }}/about{% endif %}">
                       {% if 'ru' in LANGUAGE_CODE %}
                         ИНФО/КОНТАКТЫ
                         {% else %}
@@ -96,6 +98,7 @@
                     </li>
 
                 </ul>
+                </div>
                 {% for obj in logoList %}
                 <div class="main-nav-logo col span-1-of-3">
                   <img src="{{ obj.image.url }}" alt="" class="logo">
@@ -104,10 +107,20 @@
                 <ul class="main-nav-2 col span-1-of-3">
                       {% for language in languages %}
                           <li>
-                              <a href="/{{ language.code }}{{ request.get_full_path|slice:'3:' }}" class="{% if language.code == LANGUAGE_CODE %}selected{% endif %}">
+                              <a href="{% if language.code == 'ru' %}
+                                        {{ request.path|slice:'3:' }}
+                                      {% else %}
+                                          {% if 'en' in request.path %}
+                                            {{ request.get_full_path|slice:':' }}
+                                          {% else %}
+                                            /{{ language.code }}{{ request.get_full_path|slice:':' }}
+                                          {% endif %}
+                                      {% endif %}">
                                   <div class="upper" {% if language.code == LANGUAGE_CODE %}style="color:#fcaf11;"{% endif %}>{{ language.code }}</div>
                               </a>
                           </li>
+                          
+
                       {% endfor %}
                 </ul>
 			</div>
@@ -120,6 +133,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js'></script>
 <script src="{% static 'js/gallery.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>
