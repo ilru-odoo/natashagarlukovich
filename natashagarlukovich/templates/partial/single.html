@@ -16,7 +16,7 @@
 				  </a>
 			  </figure>
 	    </div>
-	    <p>{{ postList.content }}</p>
+	    <p>{{ postList.content | safe }}</p>
     </div>
   {% else %}
     <p>Страница не найдена</p>

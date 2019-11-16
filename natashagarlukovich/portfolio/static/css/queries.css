@@ -1,13 +1,14 @@
 
 /* Big tablet to 1200px (width smaller that the 1140px row) */
 @media only screen and (max-width: 1200px) {
-	
+	.logo {height: 65px;}
 }
 
 
 
 /* Small tablet to big tablet: 768 to 1023 px */
 @media only screen and (max-width: 1023px) {
+	.logo {height: 60px;}
 	.main-nav-1 li {
 			margin:0 0 0 10px;
 		font-size: 55%;
@@ -48,11 +49,13 @@
 
 /* Small phones to small tablet: 481 to 767 px */
 @media only screen and (max-width: 767px) {
-	
+.logo {height: 55px;}
 }
+
+
 
 /* Small phones from: 0 to 480px */
 @media only screen and (max-width: 480px) {
 
-    
+    .logo {height: 50px;}
 }

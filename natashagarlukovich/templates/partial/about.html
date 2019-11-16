@@ -12,7 +12,7 @@
 	    </div>
 	    <div class="about-titlecontent">
 		    <h3>{{ obj.title }}</h3>
-		    <p>{{ obj.content }}</p>
+		    <p>{{ obj.content | safe  }}</p>
 	    </div>
 	{% endfor %}
 	<div class="about-links">
@@ -21,7 +21,7 @@
 			<a href="https://www.facebook.com/natashagarlukovich" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
 			<a href="https://vk.com/natashagarlukovich" target="_blank"><ion-icon name="logo-vk"></ion-icon></a>
 		</div>
-		<p>natashagarlukovich@gmail.com</p>
+		<p><b>natashagarlukovich@gmail.com</b></p>
 	</div>
 	<div class="clearfix"></div>
 

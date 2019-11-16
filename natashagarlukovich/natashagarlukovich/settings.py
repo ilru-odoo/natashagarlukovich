@@ -26,12 +26,12 @@ SECRET_KEY = secretkey
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', '10.1.30.33', '192.168.1.102']
 
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [ 
     'portfolio',
     'blog',
     'about',
@@ -42,7 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

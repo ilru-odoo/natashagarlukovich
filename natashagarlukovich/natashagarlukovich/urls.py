@@ -10,6 +10,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
 	path('',  include('portfolio.urls')),
 	path('blog/',  include('blog.urls')),
+	path('ckeditor/', include('ckeditor_uploader.urls')),
     path('about/',  include('about.urls')),
     
 	) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
