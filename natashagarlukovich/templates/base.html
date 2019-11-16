@@ -128,7 +128,12 @@
 	</header>
 	{% block body %}
 	{% endblock %}
-<footer><p class="foot-p"> &copy; 2019 NATASHA GARLUKOVICH</p></footer>
+<footer><p class="foot-p">
+                        {% if 'ru' in LANGUAGE_CODE %}
+                          &copy; 2019 НАТАША ГАРЛУКОВИЧ
+                        {% else %}
+                          &copy; 2019 NATASHA GARLUKOVICH
+                        {% endif %} </p></footer>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js'></script>
