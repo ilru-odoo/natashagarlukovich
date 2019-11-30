@@ -153,7 +153,6 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
             loop: 'true',
             showHideOpacity: 'true',
-            bgOpacity: '0.7',
         };
 
         // PhotoSwipe opened from URL

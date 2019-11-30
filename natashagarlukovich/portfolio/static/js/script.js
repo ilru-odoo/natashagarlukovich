@@ -3,7 +3,7 @@ $(document).ready(function(){
         var nav = $('.js--main-nav');
         var icon = $('.js--nav-icon i');
         
-        nav.toggle(300);
+        nav.toggle(5);
         
         if (icon.hasClass('ion-md-menu')) {
             icon.addClass('ion-md-close')

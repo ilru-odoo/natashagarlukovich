@@ -5,7 +5,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
  
 class Post(models.Model):
     title = models.CharField(max_length=120)
-    description = models.TextField(default='Описание')
+    description = models.TextField(max_length=200, default='Описание')
     keywords = models.CharField(max_length=120, default='Ключевые слова')
     image = models.FileField(null=True, blank=True)
     content = RichTextUploadingField()

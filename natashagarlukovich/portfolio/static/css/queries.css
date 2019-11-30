@@ -71,7 +71,7 @@
 
 	.main-nav-1 li {
 		display: inline-block;
-		font-size: 150%;
+		font-size: 130%;
 		margin-bottom: 20px;
 	}
 
@@ -96,16 +96,18 @@
 
 	.blog-post {
     	display: block;
-    	border-bottom: 1px solid;
-    	margin: 0 7% 7% 7%;
+    	margin: 0 7% 18% 7%;
     }
-
+	
 	.blog-post-image {
     	width: 100%;
 	}
 	.blog-post-content {
 	    width: 100%;
+	    text-align: center;
 	}
+	.sp {margin-top:2%;}
+	h2 {margin-top: -2%;}
 	.sp,
 	.blog-post-content p,
 	.single-date {font-size: 50%;}
@@ -113,31 +115,15 @@
 	.blog-post-content h3 {font-size: 100%;}
 
 
-
-
-
-
-	.about-titlecontent {
-	    display: block;
-	    width: 100%;
+	.about-allcont {
+     margin:0 0 0 0;
 	}
 
-	.about-links {
-	    display: inline-block;
-	    width: 100%;
-	    margin-top: 2%;
-	}
 
-	.about-links p {
-  	margin-left: 2%;
-	}
-	.about-icons {
-	margin-left: 1%;
-    float: center;
-	}
+
 	.foot-p {
-		margin-top: 3%;
-		font-size: 55%
+		margin-top: 2%;
+		font-size: 35%;
 	}
 
 }
