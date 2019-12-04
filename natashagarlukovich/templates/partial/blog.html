@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Главная</title>
+<meta name="description" content="{{ desc }}"/>
+<meta name="keywords" content="{{ key }}"/>
+{% endblock %}
+{% load i18n %}	
+{% block body %}
+  {% if not postList %}
+  <b>Статьи не найдены</b>
+  {% else %}
+	{% load i18n %}
+
+    {% for obj in postList %}
+    <a href="{{ obj.id }}" class="post-link">
+    	<div class="blog-post row">
+    		<div class="blog-post-image ">
+		    	<img src="{{ obj.image.url }}" alt="">
+		    </div>
+		    <div class="blog-post-content">
+			    <div class="sp">{{ obj.datestamp }}</div>
+			    <h2>{{ obj.title }}</h2>
+			    <p>{{ obj.description|truncatechars:200 | safe }}</p>
+			</div>
+		</div>	
+	</a>
+    {% endfor %}
+   <div class="blog-margin"></div>
+  {% endif %}
+
+{% endblock %}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css">
+  <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+  {% load static i18n %}
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'css/grid.css' %}" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/queries.css' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+  <link rel="mask-icon" href="{% static 'favicon/safari-pinned-tab.svg' %}" color="#5bbad5">
+  <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="{% static 'favicon/browserconfig.xml' %}">
+  <meta name="theme-color" content="#ffffff">
+  
+  {% block head %}
+  <title>Title</title>
+  {% endblock %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  {% get_current_language as LANGUAGE_CODE %}
+  {% get_current_language as LANGUAGE_CODE %}
+  {% get_available_languages as LANGUAGES %}
+  {% get_language_info_list for LANGUAGES as languages %}
+
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="row">
+        <div class="col span-1-of-3"><a class="mobile-nav-icon js--nav-icon"><i class="icon ion-md-menu"></i></a>
+				<ul class="main-nav-1 js--main-nav">
+                    <li>
+                      {% if request.path == "/" or request.path == "/en/" %}
+                      <a href="{% if 'ru' in LANGUAGE_CODE %}/{% else %}/{{ LANGUAGE_CODE }}/{% endif %}" style="color: #fcaf11;">
+                        {% if 'ru' in LANGUAGE_CODE %}
+                          ПОРТФОЛИО
+                        {% else %}
+                          PORTFOLIO
+                        {% endif %}
+                      </a>
+                      {% else %}
+                      <a href="{% if 'ru' in LANGUAGE_CODE %}/{% else %}/{{ LANGUAGE_CODE }}/{% endif %}">
+                      {% if 'ru' in LANGUAGE_CODE %}
+                          ПОРТФОЛИО
+                        {% else %}
+                          PORTFOLIO
+                        {% endif %}
+                      </a>
+                      {% endif %}
+                    </li>
+                    <li>
+                      {% if "/blog/" in request.path %}
+                      <a href="{% if 'ru' in LANGUAGE_CODE %}/blog{% else %}/{{ LANGUAGE_CODE }}/blog{% endif %}" style="color: #fcaf11;">
+                        {% if 'ru' in LANGUAGE_CODE %}
+                          БЛОГ
+                        {% else %}
+                          BLOG
+                        {% endif %}
+                      </a>
+                      {% else %}
+                      <a href="{% if 'ru' in LANGUAGE_CODE %}/blog{% else %}/{{ LANGUAGE_CODE }}/blog{% endif %}">
+                      {% if 'ru' in LANGUAGE_CODE %}
+                          БЛОГ
+                        {% else %}
+                          BLOG 
+                        {% endif %}
+                      </a>
+                      {% endif %}
+                    </li>
+                    <li>
+                      {% if "/about/" in request.path  %}
+                      <a href="{% if 'ru' in LANGUAGE_CODE %}/about{% else %}/{{ LANGUAGE_CODE }}/about{% endif %}" style="color: #fcaf11;">
+                        {% if 'ru' in LANGUAGE_CODE %}
+                        ИНФО/КОНТАКТЫ
+                        {% else %}
+                        ABOUT/CONTACT
+                        {% endif %}
+                      </a>
+                      {% else %}
+                      <a href="{% if 'ru' in LANGUAGE_CODE %}/about{% else %}/{{ LANGUAGE_CODE }}/about{% endif %}">
+                      {% if 'ru' in LANGUAGE_CODE %}
+                        ИНФО/КОНТАКТЫ
+                        {% else %}
+                        ABOUT/CONTACT
+                        {% endif %}
+                      </a>
+                      {% endif %}
+                    </li>
+
+                </ul>
+                </div>
+                {% for obj in logoList %}
+                <div class="main-nav-logo col span-1-of-3">
+                  <img src="{{ obj.image.url }}" alt="" class="logo">
+                </div>
+                {% endfor %}
+                <ul class="main-nav-2 col span-1-of-3">
+                      {% for language in languages %}
+                          <li>
+                              <a href="{% if language.code == 'ru' %}
+                                        {{ request.path|slice:'3:' }}
+                                      {% else %}
+                                          {% if 'en' in request.path %}
+                                            {{ request.get_full_path|slice:':' }}
+                                          {% else %}
+                                            /{{ language.code }}{{ request.get_full_path|slice:':' }}
+                                          {% endif %}
+                                      {% endif %}">
+                                  <div class="upper" {% if language.code == LANGUAGE_CODE %}style="color:#fcaf11;"{% endif %}>{{ language.code }}</div>
+                              </a>
+                          </li>
+                          
+
+                      {% endfor %}
+                </ul>
+			</div>
+		</nav>
+	</header>
+	{% block body %}
+	{% endblock %}
+<footer><p class="foot-p">
+                        {% if 'ru' in LANGUAGE_CODE %}
+                          &copy; 2019 НАТАША ГАРЛУКОВИЧ
+                        {% else %}
+                          &copy; 2019 NATASHA GARLUKOVICH
+                        {% endif %} </p></footer>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js'></script>
+<script src="{% static 'js/gallery.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
