@@ -24,7 +24,8 @@ from natashagarlukovich.secret import *
 SECRET_KEY = secretkey
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 ALLOWED_HOSTS = ['127.0.0.1', '10.1.30.33', '192.168.1.102']
 
