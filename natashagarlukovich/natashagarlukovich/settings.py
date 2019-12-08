@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -143,5 +144,5 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
 
 MEDIA_URL = '/media/'
-
+STATICFILES_STORAGE = ‘whitenoise.storage.CompressedManifestStaticFilesStorage’
 django_heroku.settings(locals())
