@@ -1,1 +1,1 @@
-web: gunicorn natashagarlukovich.natashagarlukovich.wsgi
+web: gunicorn NG.natashagarlukovich.wsgi
