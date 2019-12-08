@@ -27,7 +27,7 @@ SECRET_KEY = secretkey
 # DEBUG = True
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = ['127.0.0.1', '10.1.30.33', '192.168.1.102']
+ALLOWED_HOSTS = ['127.0.0.1', '10.1.30.33', '192.168.1.102','natashagarlukovich.herokuapp.com']
 
 
 # Application definition
